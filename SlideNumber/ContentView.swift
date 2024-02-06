@@ -8,14 +8,40 @@
 import SwiftUI
 
 struct ContentView: View {
+    @ObservedObject var viewModel = NumberViewModel()
+    
     var body: some View {
         VStack {
-            Image(systemName: "globe")
-                .imageScale(.large)
-                .foregroundColor(.accentColor)
-            Text("Hello, world!")
+            LazyVGrid(columns: [GridItem(), GridItem(), GridItem(), GridItem()]){
+                            ForEach(viewModel.cards) { card in
+                                CardView(card)
+                                    .aspectRatio(1, contentMode: .fit) // auto fix
+                            }
+                        }
         }
         .padding()
+    }
+}
+
+struct CardView: View {
+    var card: SlideNumberGameModel<String>.Card
+    
+    init(_ card: SlideNumberGameModel<String>.Card) {
+        self.card = card
+    }
+    
+    var body: some View {
+        ZStack{
+            if !card.isBlank{
+                let base = RoundedRectangle(cornerRadius: 12)
+                
+                Group {
+                    base.foregroundColor(.white)
+                    base.strokeBorder(lineWidth: 2)
+                    Text(card.content)
+                }
+            }
+        }
     }
 }
 
