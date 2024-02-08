@@ -14,7 +14,7 @@ class NumberViewModel: ObservableObject {
                          "13", "14", "15", ""]
     
     // if something chage in this , it will be announced
-    @Published private var model = SlideNumberGameModel<String>(numberOfPairsOfCards: number.count) {
+    @Published private var model = SlideNumberGameModel<String>(numberOfCards: number.count) {
         index in number[index]
     }
     
@@ -26,7 +26,19 @@ class NumberViewModel: ObservableObject {
         model.shuffle()
     }
     
-//    func choose(_ card: SlideNumberGameModel<String>.Card) {
-//        model.choose(card)
-//    }
+    func slide(_ card: SlideNumberGameModel<String>.Card) {
+        model.slide(card)
+    }
+    
+    func moveNumber() -> String {
+        return model.moveNumber()
+    }
+    
+    func startNewGame() {
+        model.startNewGame()
+    }
+    
+    func isGameEnd() -> Bool {
+        return model.isGameEnd()
+    }
 }
