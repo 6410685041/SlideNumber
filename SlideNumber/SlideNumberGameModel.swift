@@ -29,18 +29,16 @@ struct SlideNumberGameModel<CardContentType> {
             cards.append(card)
             cardCheck.append(card)
         }
-        cards.shuffle()
+        shuffle()
     }
     
     mutating func slide(_ card : Card) {
         if isEnd {
             return
         }
-        
         let indexB = indexBlank()
         let indexC = index(of: card)
-        var indexCheck: Array<Int> = [indexB-4, indexB-1, indexB+1, indexB+4]
-        indexCheck = indexCheck.filter { $0 >= 0 && $0 < cards.count }
+        let indexCheck = indexAroundBlank()
         if indexCheck.contains(indexC) {
             cards[indexC] = blankCard
             cards[indexB] = card
@@ -48,6 +46,15 @@ struct SlideNumberGameModel<CardContentType> {
         }
         check()
     }
+    
+    private func indexAroundBlank() -> Array<Int> {
+        let indexB = indexBlank()
+        var indexCheck: Array<Int> = [indexB-4, indexB-1, indexB+1, indexB+4]
+        indexCheck = indexCheck.filter { $0 >= 0 && $0 < cards.count }
+        
+        return indexCheck
+    }
+    
     
     private func indexBlank() -> Int {
         return index(of: blankCard)
@@ -80,7 +87,21 @@ struct SlideNumberGameModel<CardContentType> {
     }
     
     mutating func shuffle() {
-        cards.shuffle()
+        for round in 0...1000 {
+            let indexCheck = indexAroundBlank()
+            let move = Int(lround(Double.random(in: 0...1)*Double(indexCheck.count-1)))
+            let index = indexCheck[move]
+            let card = cards[index]
+            swap(card)
+        }
+    }
+    
+    private mutating func swap(_ card : Card) {
+        let indexB = indexBlank()
+        let indexC = index(of: card)
+        let indexCheck = indexAroundBlank()
+        cards[indexC] = blankCard
+        cards[indexB] = card
     }
     
     mutating func startNewGame() {
