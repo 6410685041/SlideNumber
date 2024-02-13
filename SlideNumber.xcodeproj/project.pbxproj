@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19A9DA622B7B2D1600D5D32D /* Demo Slide Number game.png in Resources */ = {isa = PBXBuildFile; fileRef = 19A9DA612B7B2D1600D5D32D /* Demo Slide Number game.png */; };
 		19C4374C2B71DDBB008663C6 /* SlideNumberApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4374B2B71DDBB008663C6 /* SlideNumberApp.swift */; };
 		19C4374E2B71DDBB008663C6 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 19C4374D2B71DDBB008663C6 /* ContentView.swift */; };
 		19C437502B71DDCF008663C6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 19C4374F2B71DDCF008663C6 /* Assets.xcassets */; };
@@ -36,6 +37,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19A9DA612B7B2D1600D5D32D /* Demo Slide Number game.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = "Demo Slide Number game.png"; path = "../../Desktop/Demo Slide Number game.png"; sourceTree = "<group>"; };
 		19C437482B71DDBA008663C6 /* SlideNumber.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideNumber.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		19C4374B2B71DDBB008663C6 /* SlideNumberApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlideNumberApp.swift; sourceTree = "<group>"; };
 		19C4374D2B71DDBB008663C6 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -76,9 +78,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		19A9DA602B7B2D0100D5D32D /* images */ = {
+			isa = PBXGroup;
+			children = (
+				19A9DA612B7B2D1600D5D32D /* Demo Slide Number game.png */,
+			);
+			path = images;
+			sourceTree = "<group>";
+		};
 		19C4373F2B71DDBA008663C6 = {
 			isa = PBXGroup;
 			children = (
+				19A9DA602B7B2D0100D5D32D /* images */,
 				19C4374A2B71DDBA008663C6 /* SlideNumber */,
 				19C4375C2B71DDCF008663C6 /* SlideNumberTests */,
 				19C437662B71DDD0008663C6 /* SlideNumberUITests */,
@@ -241,6 +252,7 @@
 			files = (
 				19C437542B71DDCF008663C6 /* Preview Assets.xcassets in Resources */,
 				19C437502B71DDCF008663C6 /* Assets.xcassets in Resources */,
+				19A9DA622B7B2D1600D5D32D /* Demo Slide Number game.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
