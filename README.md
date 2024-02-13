@@ -21,7 +21,7 @@ Student ID: 6410685041
 
 - Game Screen
   
-![](Demo\ Slide\ Number\ game.png)
+![Game Screen](Demo_Slide_Number_game.png)
 
 ### Video
 
