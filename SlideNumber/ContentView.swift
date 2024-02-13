@@ -34,7 +34,9 @@ struct ContentView: View {
                                             CardView(card)
                                                 .aspectRatio(1, contentMode: .fit) // auto fix
                                                 .onTapGesture {
-                                                    viewModel.slide(card)
+                                                    withAnimation(.easeInOut(duration: 0.25)) {
+                                                                        viewModel.slide(card)
+                                                                    }
                                                 }
                                         }
                                     }

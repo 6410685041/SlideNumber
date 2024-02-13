@@ -99,7 +99,6 @@ struct SlideNumberGameModel<CardContentType> {
     private mutating func swap(_ card : Card) {
         let indexB = indexBlank()
         let indexC = index(of: card)
-        let indexCheck = indexAroundBlank()
         cards[indexC] = blankCard
         cards[indexB] = card
     }
